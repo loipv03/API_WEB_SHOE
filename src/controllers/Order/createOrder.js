@@ -1,5 +1,5 @@
-import validateOrder from '../../schemas/orderValidation';
-import Order from '../../models/order';
+import validateOrder from "../../schemas/orderValidation.js";
+import Order from "../../models/order.js";
 
 const createOrder = async (req, res) => {
   try {
@@ -12,11 +12,13 @@ const createOrder = async (req, res) => {
     const newOrder = new Order(req.body);
     await newOrder.save();
 
-    return res.status(201).json({ message: 'Đơn hàng đã được tạo thành công', order: newOrder });
+    return res
+      .status(201)
+      .json({ message: "Đơn hàng đã được tạo thành công", order: newOrder });
   } catch (err) {
-    return res.status(500).json({ error: 'Lỗi server nội bộ' });
+    return res.status(500).json({ error: "Lỗi server nội bộ" });
   }
-// console.log('hshsd');
+  // console.log('hshsd');
 };
 
 export { createOrder };

@@ -1,4 +1,4 @@
-import Order from '../../models/order';
+import Order from "../../models/order.js";
 
 const getAllOrders = async (req, res) => {
   try {
@@ -7,7 +7,7 @@ const getAllOrders = async (req, res) => {
 
     return res.status(200).json({ orders: allOrders });
   } catch (err) {
-    return res.status(500).json({ error: 'Lỗi server nội bộ' });
+    return res.status(500).json({ error: "Lỗi server nội bộ" });
   }
 };
 

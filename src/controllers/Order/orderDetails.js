@@ -1,4 +1,4 @@
-import Order from '../../models/order';
+import Order from "../../models/order.js";
 
 const getOrderDetails = async (req, res) => {
   try {
@@ -8,12 +8,12 @@ const getOrderDetails = async (req, res) => {
     const order = await Order.findOne({ orderId });
 
     if (!order) {
-      return res.status(404).json({ message: 'Không tìm thấy đơn hàng' });
+      return res.status(404).json({ message: "Không tìm thấy đơn hàng" });
     }
 
     return res.status(200).json({ order });
   } catch (err) {
-    return res.status(500).json({ error: 'Lỗi server nội bộ' });
+    return res.status(500).json({ error: "Lỗi server nội bộ" });
   }
 };
 
